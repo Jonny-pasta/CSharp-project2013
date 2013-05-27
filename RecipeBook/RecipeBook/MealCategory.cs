@@ -1,6 +1,6 @@
 ﻿namespace RecipeBook
 {
-    enum MealCategory
+    public enum MealCategory
     {
         MEAT, MEATLESS, FISH, SWEET, ALCOHOLIC, NONALCOHOLIC, PASTA
     }

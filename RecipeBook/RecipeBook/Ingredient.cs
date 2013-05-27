@@ -6,7 +6,7 @@ namespace RecipeBook
     /// class represents ingredient
     /// same ingredients are not same, if they are not in the same recipe
     /// </summary>
-    class Ingredient : IComparable<Ingredient>, IEquatable<Ingredient>
+    public class Ingredient : IComparable<Ingredient>, IEquatable<Ingredient>
     {
         /// <summary>
         /// attributes

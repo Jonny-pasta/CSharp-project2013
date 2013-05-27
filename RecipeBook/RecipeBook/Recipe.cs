@@ -8,7 +8,7 @@ namespace RecipeBook
     /// class represents recipe
     /// NOTE: class has a natural ordering that is inconsistent with equals
     /// </summary>
-    class Recipe : IComparable<Recipe>, IEquatable<Recipe>
+    public class Recipe : IComparable<Recipe>, IEquatable<Recipe>
     {
         /// <summary>
         /// attributes

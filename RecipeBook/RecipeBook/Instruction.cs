@@ -2,7 +2,7 @@
 
 namespace RecipeBook
 {
-    class Instruction : IComparable<Instruction>, IEquatable<Instruction>
+    public class Instruction : IComparable<Instruction>, IEquatable<Instruction>
     {
         /// <summary>
         /// attributes
