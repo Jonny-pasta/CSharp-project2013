@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBook", "RecipeBook\RecipeBook.csproj", "{183E5034-46C2-4178-AEB9-515ED289FEFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBook.Tests", "RecipeBook.Tests\RecipeBook.Tests.csproj", "{62DACE28-91D6-43CB-9F06-F6B18A5E501B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{183E5034-46C2-4178-AEB9-515ED289FEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183E5034-46C2-4178-AEB9-515ED289FEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183E5034-46C2-4178-AEB9-515ED289FEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183E5034-46C2-4178-AEB9-515ED289FEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62DACE28-91D6-43CB-9F06-F6B18A5E501B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62DACE28-91D6-43CB-9F06-F6B18A5E501B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62DACE28-91D6-43CB-9F06-F6B18A5E501B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62DACE28-91D6-43CB-9F06-F6B18A5E501B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
