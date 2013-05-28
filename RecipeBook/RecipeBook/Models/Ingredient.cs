@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 
 namespace RecipeBook.Models
 {
@@ -12,7 +13,7 @@ namespace RecipeBook.Models
         /// <summary>
         /// ID of ingredient
         /// </summary>
-        public long? ID 
+        public int ID 
         {
             get
             {
@@ -21,7 +22,7 @@ namespace RecipeBook.Models
 
             set
             {
-                if ((value == null) || (value < 0))
+                if (value < 0)
                 {
                     throw new ArgumentException("id cannot be null or negative");
                 }
@@ -61,7 +62,7 @@ namespace RecipeBook.Models
 
             set
             {
-                if (value == null || value < 0)
+                if (value < 0)
                 {
                     throw new ArgumentException("amount cannot be null or negative");
                 }
@@ -189,4 +190,10 @@ namespace RecipeBook.Models
             return true;
         }
     }
+
+    public class IngredientDBContext : DbContext
+    {
+        public DbSet<Ingredient> Ingredients { get; set; }
+    }
 }
+

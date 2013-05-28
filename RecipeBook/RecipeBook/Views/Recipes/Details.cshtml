@@ -1,0 +1,36 @@
+﻿@model RecipeBook.Models.Recipe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Recipe</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CookingTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CookingTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumPortions)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumPortions)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

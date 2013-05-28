@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 
 namespace RecipeBook.Models
 {
@@ -11,7 +12,7 @@ namespace RecipeBook.Models
         /// <summary>
         /// ID of instruction
         /// </summary>
-        public long? ID 
+        public int ID 
         {
             get
             {
@@ -20,7 +21,7 @@ namespace RecipeBook.Models
 
             set
             {
-                if (value == null || value < 0)
+                if (value < 0)
                 {
                     throw new ArgumentException("id cannot be null or negative");
                 }
@@ -86,10 +87,6 @@ namespace RecipeBook.Models
         // override IComparable<Instruction>.CompareTo
         int IComparable<Instruction>.CompareTo(Instruction other)
         {
-            if ((this.ID == null) || (other.ID == null))
-            {
-                throw new ArgumentException("comparing instruction with null ID");
-            }
             long thisId = (long)this.ID;
             long otherId = (long)other.ID;
             return thisId.CompareTo(otherId);
@@ -108,5 +105,10 @@ namespace RecipeBook.Models
             }
             return true;
         }
+    }
+
+    public class InstructionDBContext : DbContext
+    {
+        public DbSet<Instruction> Instructions { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 
 namespace RecipeBook.Models
 {
@@ -13,7 +14,7 @@ namespace RecipeBook.Models
         /// <summary>
         /// ID of recipe
         /// </summary>
-        public long? ID 
+        public int ID 
         {
             get
             {
@@ -22,7 +23,7 @@ namespace RecipeBook.Models
 
             set
             {
-                if ((value == null) || (value < 0))
+                if (value < 0)
                 {
                     throw new ArgumentException("id cannot be null or negative");
                 }
@@ -62,10 +63,6 @@ namespace RecipeBook.Models
 
             set
             {
-                if (value == null)
-                {
-                    throw new ArgumentException("Meal type cannot be null");
-                }
                 this.MealType = value;
             }
         }
@@ -82,10 +79,6 @@ namespace RecipeBook.Models
 
             set
             {
-                if (value == null)
-                {
-                    throw new ArgumentException("Meal category cannot be null");
-                }
                 this.MealCategory = value;
             }
         }
@@ -102,10 +95,6 @@ namespace RecipeBook.Models
 
             set
             {
-                if (value == null || value <0)
-                {
-                    throw new ArgumentException("cooking time cannost be null or negative");
-                }
                 this.CookingTime = value;
             }
         }
@@ -122,10 +111,6 @@ namespace RecipeBook.Models
 
             set
             {
-                if (value == null || value < 0)
-                {
-                    throw new ArgumentException("number of portions cannot be null or empty");
-                }
                 this.NumPortions = value;
             }
         }
@@ -286,10 +271,6 @@ namespace RecipeBook.Models
         // override IComparable.CompareTo
         public int CompareTo(Recipe other)
         {
-            if ((this.ID == null) || (other.ID == null))
-            {
-                throw new ArgumentException("comparing recipe with null ID");
-            }
             long thisId = (long)this.ID;
             long otherId = (long)other.ID;
             return thisId.CompareTo(otherId);
@@ -343,5 +324,10 @@ namespace RecipeBook.Models
             }
             return true;
         }
+    }
+
+    public class RecipeDBContext : DbContext
+    {
+        public DbSet<Recipe> Recipes { get; set; }
     }
 }
